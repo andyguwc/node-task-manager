@@ -37,15 +37,26 @@ app.listen(port, () => {
 
 
 // const bcrypt = require('bcryptjs')
-const jwt = require('jsonwebtoken')
+// const jwt = require('jsonwebtoken')
 
 
-const myFunction = async () => {
-    const token = jwt.sign({_id: 'abc123'},'thisismynewcourse', {expiresIn: '7 days'})
-    console.log(token)
+// const myFunction = async () => {
+//     const token = jwt.sign({_id: 'abc123'},'thisismynewcourse', {expiresIn: '7 days'})
+//     console.log(token)
 
-    const data = jwt.verify(token, 'thisismynewcourse')
-    console.log(data)
-}
+//     const data = jwt.verify(token, 'thisismynewcourse')
+//     console.log(data)
+// }
 
-myFunction()
+// myFunction()
+
+
+// const pet = {
+//     name: 'cat'
+// }
+
+// pet.toJSON = function () {
+//     return {}
+// }
+
+// console.log(JSON.stringify(pet))
