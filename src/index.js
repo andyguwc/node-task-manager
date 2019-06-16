@@ -6,22 +6,36 @@ const taskRouter = require('./routers/task')
 const app = express()
 const port = process.env.PORT || 3000
 
-// using variation in middleware to limit what users have access to 
-// app.use((req, res, next)=> {
-//     if (req.method === 'GET') {
-//         res.send('GET requests are disabled')
-//     } else {
-//         next() 
+
+// const multer = require('multer')
+// const upload = multer({
+//     dest: 'images',
+//     limits: {
+//         fileSize: 1000000
+//     },
+//     fileFilter(req, file, cb) {
+//         if (!file.originalname.match(/\.(doc|docx)$/)) {
+//             return cb(new Error('please upload a word document'))
+//         }
+
+//         cb(undefined, true)
+//         // cb(new Error('file must be a pdf'))
+//         // cb(undefined, true)
+//         // cb(undefined, false)
 //     }
-//     // console.log(req.method, req.path)
-//     // next()
 // })
 
+// // const errorMiddleware = (req, res, next) => {
+// //     throw new Error('from my middleware')
+// // }
 
-// app.use((req, res, next) => {
-//     res.status(503).send("site in maintenance")
-//     // next()
-// })
+// app.post('/upload', upload.single('upload'), (req, res) => {
+//     res.send()
+// }, (error, req, res, next) => {
+//     res.status(400).send({error:error.message})
+// }
+
+// )
 
 app.use(express.json())
 app.use(userRouter)

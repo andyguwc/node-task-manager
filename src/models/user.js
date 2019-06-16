@@ -42,6 +42,10 @@ const userSchema = new mongoose.Schema({
 
     }], 
 
+    avatar: {
+        type: Buffer
+    },
+
     password: {
         type: String,
         trim: true, 
@@ -57,9 +61,6 @@ const userSchema = new mongoose.Schema({
         timestamps:true
     }
 )
-
-
-
 
 userSchema.statics.findByCredentials = async (email, password) => {
     const user = await User.findOne({ email })
@@ -83,11 +84,14 @@ userSchema.virtual('tasks', {
     foreignField: 'owner'
 })
 
+// remove it from profile response
+
 userSchema.methods.toJSON = function  () {
     const user = this
     const userObject = user.toObject()
     delete userObject.password 
     delete userObject.tokens
+    delete userObject.avatar
     return userObject
 }
 
