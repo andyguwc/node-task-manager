@@ -31,6 +31,20 @@ app.listen(port, () => {
     console.log('Server is up on port ' + port)
 })
 
+// const Task = require('./models/task')
+// const User = require('./models/user')
+// const main = async () => {
+//     // const task = await Task.findById('5d0503b37eff8592f806da4d')
+//     // await task.populate('owner').execPopulate()
+//     // console.log(task.owner)
+
+//     // print tasks associated with users 
+//     const user = await User.findById('5d0503a07eff8592f806da4b')
+//     await user.populate('tasks').execPopulate()
+//     console.log(user.tasks)
+// }
+
+// main()
 
 // without middleware: new request -> run route handler
 // with middleware: new request -> do something -> run route handler
